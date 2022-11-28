@@ -1,7 +1,7 @@
 import 'package:amazon_clone_tutorial_praksa/common/widgets/custom_button.dart';
 import 'package:amazon_clone_tutorial_praksa/common/widgets/custom_textfield.dart';
 import 'package:amazon_clone_tutorial_praksa/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial_praksa/features/auth/services/auth_services.dart';
+import 'package:amazon_clone_tutorial_praksa/features/auth/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 enum Auth {
@@ -41,6 +41,14 @@ class _AuthScreenState extends State<AuthScreen> {
       email: _emailController.text,
       password: _passwordController.text,
       name: _nameController.text,
+    );
+  }
+
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
     );
   }
 
@@ -158,7 +166,11 @@ class _AuthScreenState extends State<AuthScreen> {
                       const SizedBox(height: 10),
                       CustomButton(
                         text: 'Sign In',
-                        onTap: () {},
+                        onTap: () {
+                          if (_signInFormKey.currentState!.validate()) {
+                            signInUser();
+                          }
+                        },
                       ),
                     ],
                   ),
