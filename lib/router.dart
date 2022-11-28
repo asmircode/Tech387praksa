@@ -1,3 +1,5 @@
+import 'package:amazon_clone_tutorial_praksa/common/widgets/bottom_bar.dart';
+import 'package:amazon_clone_tutorial_praksa/features/admin/screens/add_product_screen.dart';
 import 'package:amazon_clone_tutorial_praksa/features/auth/screens/auth_screen.dart';
 import 'package:amazon_clone_tutorial_praksa/features/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,19 @@ Route<dynamic> generateRoute(routeSettings) {
         settings: routeSettings,
         builder: (_) => const HomeScreen(),
       );
+
+    case BottomBar.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const BottomBar(),
+      );
+
+    case AddProductScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const AddProductScreen(),
+      );
+
     default:
       return MaterialPageRoute(
         settings: routeSettings,

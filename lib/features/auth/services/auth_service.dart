@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
+import 'package:amazon_clone_tutorial_praksa/common/widgets/bottom_bar.dart';
 import 'package:amazon_clone_tutorial_praksa/constants/error_handling.dart';
 import 'package:amazon_clone_tutorial_praksa/constants/global_variables.dart';
 import 'package:amazon_clone_tutorial_praksa/constants/utils.dart';
@@ -65,7 +68,6 @@ class AuthService {
           'Content-Type': "application/json;charset=UTF-8",
         },
       );
-      print(res.body);
       httpErrorHandle(
         response: res,
         context: context,
@@ -76,7 +78,7 @@ class AuthService {
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
           Navigator.pushNamedAndRemoveUntil(
             context,
-            HomeScreen.routeName,
+            BottomBar.routeName,
             (route) => false,
           );
         },
