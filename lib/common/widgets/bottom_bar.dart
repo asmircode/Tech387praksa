@@ -1,5 +1,6 @@
 import 'package:amazon_clone_tutorial_praksa/constants/global_variables.dart';
 import 'package:amazon_clone_tutorial_praksa/features/account/screens/account_screen.dart';
+import 'package:amazon_clone_tutorial_praksa/features/cart/screens/cart_screen.dart';
 import 'package:amazon_clone_tutorial_praksa/features/home/screens/home_screen.dart';
 import 'package:amazon_clone_tutorial_praksa/providers/user_provider.dart';
 import 'package:badges/badges.dart';
@@ -22,9 +23,7 @@ class _BottomBarState extends State<BottomBar> {
   List<Widget> pages = [
     const HomeScreen(),
     const AccountScreen(),
-    const Center(
-      child: Text('Cart Page'),
-    ),
+    const CartScreen(),
   ];
 
   void updatePage(int page) {
@@ -35,7 +34,7 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-    // final userCartLen = context.watch<UserProvider>().user.cart.length;
+    final userCartLen = context.watch<UserProvider>().user.cart.length;
     return Scaffold(
       body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
@@ -102,7 +101,7 @@ class _BottomBarState extends State<BottomBar> {
               ),
               child: Badge(
                 elevation: 0,
-                // badgeContent: Text(userCartLen.toString()),
+                badgeContent: Text(userCartLen.toString()),
                 badgeColor: Colors.white,
                 child: const Icon(
                   Icons.shopping_cart_outlined,

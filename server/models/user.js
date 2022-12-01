@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { productSchema } = require("./product");
 
 const userSchema = mongoose.Schema({
   //struktura aplikacije, user-model
@@ -32,7 +33,15 @@ const userSchema = mongoose.Schema({
     type: String,
     default: "user",
   },
-  //cart
+  cart: [
+    {
+      product: productSchema,
+      quantity: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
 });
 
 const User = mongoose.model("User", userSchema); //reiramo model, schema je samo shema kako nam izgleda user

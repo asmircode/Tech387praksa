@@ -1,7 +1,7 @@
-import 'package:amazon_clone_tutorial/common/widgets/loader.dart';
-import 'package:amazon_clone_tutorial/features/home/services/home_services.dart';
-import 'package:amazon_clone_tutorial/features/product_details/screens/product_details_screen.dart';
-import 'package:amazon_clone_tutorial/models/product.dart';
+import 'package:amazon_clone_tutorial_praksa/common/widgets/loader.dart';
+import 'package:amazon_clone_tutorial_praksa/features/home/services/home_services.dart';
+import 'package:amazon_clone_tutorial_praksa/features/product_details/screens/product_details_screen.dart';
+import 'package:amazon_clone_tutorial_praksa/models/product.dart';
 import 'package:flutter/material.dart';
 
 class DealOfDay extends StatefulWidget {
@@ -18,7 +18,7 @@ class _DealOfDayState extends State<DealOfDay> {
   @override
   void initState() {
     super.initState();
-    fetchDealOfDay();
+    // fetchDealOfDay();
   }
 
   void fetchDealOfDay() async {

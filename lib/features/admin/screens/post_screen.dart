@@ -1,5 +1,8 @@
+import 'package:amazon_clone_tutorial_praksa/common/widgets/loader.dart';
 import 'package:amazon_clone_tutorial_praksa/features/account/widgets/single_product.dart';
 import 'package:amazon_clone_tutorial_praksa/features/admin/screens/add_product_screen.dart';
+import 'package:amazon_clone_tutorial_praksa/features/admin/services/admin_services.dart';
+import 'package:amazon_clone_tutorial_praksa/models/product.dart';
 import 'package:flutter/material.dart';
 
 class PostsScreen extends StatefulWidget {
@@ -54,7 +57,7 @@ class _PostsScreenState extends State<PostsScreen> {
                 return Column(
                   children: [
                     SizedBox(
-                      height: 140,
+                      height: 120,
                       child: SingleProduct(
                         image: productData.images[0],
                       ),

@@ -3,6 +3,7 @@ import 'package:amazon_clone_tutorial_praksa/features/home/widgets/address_box.d
 import 'package:amazon_clone_tutorial_praksa/features/home/widgets/carousel_image.dart';
 import 'package:amazon_clone_tutorial_praksa/features/home/widgets/deal_of_day.dart';
 import 'package:amazon_clone_tutorial_praksa/features/home/widgets/top_categories.dart';
+import 'package:amazon_clone_tutorial_praksa/features/search/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   void navigateToSearchScreen(String query) {
-    // Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
+    Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
   }
 
   @override
